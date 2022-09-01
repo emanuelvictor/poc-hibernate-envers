@@ -1,0 +1,16 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521:XE
+    username: POC_HIBERNATE_ENVERS
+    password: POC_HIBERNATE_ENVERS
+    driver-class-name: oracle.jdbc.OracleDriver
+
+cors:
+  enabled: true
+  allowed-headers: "*"
+  allowed-methods: GET, POST, PUT, DELETE, OPTIONS
+  allowed-origins: "*"
+  exposed-headers: Content-Disposition, Content-Length, Content-Type
