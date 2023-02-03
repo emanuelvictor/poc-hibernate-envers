@@ -26,7 +26,7 @@ public class BRPhysicPersonResource {
     /**
      *
      */
-    private final IRevisionRepository<BRPhysicPerson> revisionPhysicPersonService;
+    private final IRevisionRepository<BRPhysicPerson> revisionPhysicPersonRepository;
 
     /**
      * @param filters  String
@@ -79,16 +79,16 @@ public class BRPhysicPersonResource {
      */
     @GetMapping("{id}/revisions")
     public List<Object> findRevisionsById(final @PathVariable Long id) {
-         return revisionPhysicPersonService.findRevisionsById(id);
+         return revisionPhysicPersonRepository.findRevisionsById(id);
     }
 
 
     /**
      *
-     * @return
+     * @return List<Object>
      */
     @GetMapping("revisions")
     public List<Object> findRevisions() {
-        return revisionPhysicPersonService.findRevisions();
+        return revisionPhysicPersonRepository.findRevisions();
     }
 }

@@ -30,17 +30,4 @@ public class Application extends SpringBootServletInitializer {
         SpringApplication.run(Application.class, args);
     }
 
-    @Bean
-    public RestTemplate getRestTemplate() {
-        return new RestTemplate();
-    }
-
-    @Bean
-    public static PropertySourcesPlaceholderConfigurer placeholderConfigurer() {
-        PropertySourcesPlaceholderConfigurer propsConfig = new PropertySourcesPlaceholderConfigurer();
-        propsConfig.setLocation(new ClassPathResource("/git/git.properties"));
-        propsConfig.setIgnoreResourceNotFound(true);
-        propsConfig.setIgnoreUnresolvablePlaceholders(true);
-        return propsConfig;
-    }
 }

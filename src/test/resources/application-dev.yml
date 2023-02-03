@@ -3,11 +3,13 @@ spring:
     hibernate:
       ddl-auto: update
   datasource:
-    url: jdbc:oracle:thin:@localhost:1521:XE
-    username: POC_HIBERNATE_ENVERS
-    password: POC_HIBERNATE_ENVERS
-    driver-class-name: oracle.jdbc.OracleDriver
-
+    username: poc-hibernate-envers
+    password: poc-hibernate-envers
+    hikari.pool-name: ${spring.application.name}
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: org.postgresql.Driver
+    hikari.maximum-pool-size: 10
+    url: jdbc:postgresql://localhost:5432/poc-hibernate-envers
 cors:
   enabled: true
   allowed-headers: "*"

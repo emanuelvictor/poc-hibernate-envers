@@ -14,7 +14,7 @@ spring:
 
   #JPA
   jpa:
-    database-platform: org.hibernate.dialect.Oracle10gDialect
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
     show-sql: true
     format_sql: false
     open-in-view: false
