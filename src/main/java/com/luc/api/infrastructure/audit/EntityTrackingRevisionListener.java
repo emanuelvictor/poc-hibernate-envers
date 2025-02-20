@@ -26,7 +26,7 @@ public class EntityTrackingRevisionListener implements org.hibernate.envers.Enti
     @Override
     @SuppressWarnings("rawtypes")
     public void entityChanged(Class entityClass, String entityName, Serializable entityId, RevisionType revisionType, Object revisionEntity) {
-        final String username = SecurityContextHolder.getContext() == null ? null : (SecurityContextHolder.getContext().getAuthentication() == null ? null : SecurityContextHolder.getContext().getAuthentication().getName().toUpperCase());
+        final String username = SecurityContextHolder.getContext() == null ? null :  (SecurityContextHolder.getContext().getAuthentication() == null ? null : SecurityContextHolder.getContext().getAuthentication().getName().toUpperCase());
         ((FiservRevision<?, ?>) revisionEntity).setUsername(username);
     }
 
